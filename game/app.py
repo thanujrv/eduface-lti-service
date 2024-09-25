@@ -3,7 +3,7 @@ import os
 import pprint
 
 from tempfile import mkdtemp
-from flask import Flask, jsonify, request, render_template, url_for
+from flask import Flask, jsonify, request, render_template, url_for, redirect
 from flask_caching import Cache
 from werkzeug.exceptions import Forbidden
 from pylti1p3.contrib.flask import FlaskOIDCLogin, FlaskMessageLaunch, FlaskRequest, FlaskCacheDataStorage
@@ -119,7 +119,13 @@ def launch():
         'curr_user_name': message_launch_data.get('name', ''),
         'curr_diff': difficulty
     }
-    return render_template('game.html', **tpl_kwargs)
+
+    base_url = "https://eduface.nl/brightspace/feedback/"
+
+    query_string = "&".join([f"{key}={value}" for key, value in tpl_kwargs.items()])
+    full_url = f"{base_url}?{query_string}"
+
+    return redirect(full_url)
 
 
 @app.route('/jwks/', methods=['GET'])

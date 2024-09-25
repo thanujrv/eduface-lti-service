@@ -63,17 +63,17 @@
         "public_key_file": "public.key",
         "deployment_ids": ["deployment-id"]
     }],
-    "https://partners.brightspace.com": [{
+    "https://eduface.d2l-partners.brightspace.com": [{
         "default": true,
-        "client_id": "client-id",
-        "auth_login_url": "https://partners.brightspace.com/d2l/lti/authenticate",
+        "client_id": "b2d72f5d-8b31-4a6d-bca6-cdb6d36075d4",
+        "auth_login_url": "https://eduface.d2l-partners.brightspace.com/d2l/lti/authenticate",
         "auth_token_url": "https://auth.brightspace.com/core/connect/token",
         "auth_audience": "https://api.brightspace.com/auth/token",
-        "key_set_url": "https://partners.brightspace.com/d2l/.well-known/jwks",
+        "key_set_url": "https://eduface.d2l-partners.brightspace.com/d2l/.well-known/jwks",
         "key_set": null,
         "private_key_file": "private2.key",
         "public_key_file": "public2.key",
-        "deployment_ids": ["deployment-id"]
+        "deployment_ids": ["bd8be8d9-285c-439e-9c69-292810dd5beb"]
     }],
     "http://moodle.test": [{
         "default": true,
